@@ -23,7 +23,6 @@ class ChannelDetail extends Component {
     }
 
     return (
-
       <ul className="list-group col-sm-8">
       <h1>{this.props.news.source}</h1>
         {this.renderNewsList()}

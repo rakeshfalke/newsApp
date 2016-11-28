@@ -11,7 +11,7 @@ class ChannelList extends Component {
           key={channel.name}
           onClick={() => this.props.fetchNews(channel)}
           className="list-group-item">
-          {channel.name}
+          <img src={channel.logo} title={channel.name} width="150" />
         </li>
       );
     });
