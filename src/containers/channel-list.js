@@ -2,26 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchNews } from '../actions/index';
 import { bindActionCreators } from 'redux';
+import { Image } from 'semantic-ui-react';
 
 class ChannelList extends Component {
   renderList() {
     return this.props.newsChannel.map((channel) => {
       return (
-        <li
-          key={channel.name}
-          onClick={() => this.props.fetchNews(channel)}
-          className="list-group-item">
-          <img src={channel.logo} title={channel.name} width="150" />
-        </li>
+        <Image src={channel.logo} onClick={() => this.props.fetchNews(channel)} />
       );
     });
   }
 
   render() {
     return (
-      <ul className="list-group col-sm-4">
+      <Image.Group size='tiny'>
         {this.renderList()}
-      </ul>
+      </Image.Group>
     )
   }
 }
